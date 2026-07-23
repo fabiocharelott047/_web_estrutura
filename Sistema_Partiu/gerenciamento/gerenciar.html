@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Rolê</title>
+    <link rel="stylesheet" href="gerenciar.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Partiu!</h1>
+            <p>Gerencie custos e logística da galera</p>
+        </header>
+
+        <div class="grid-layout">
+            <!-- Coluna da Esquerda: Configuração e Cadastro -->
+            <div class="left-col">
+                <section class="card">
+                    <h2>Configurar Rolê</h2>
+                    <div class="form-group">
+                        <label for="role-name">Nome do evento</label>
+                        <input type="text" id="role-name" placeholder="Ex: Churras no Sítio">
+                    </div>
+                    <div class="form-group">
+                        <label for="role-value">Valor total estimado (R$)</label>
+                        <input type="number" id="role-value" placeholder="0.00">
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Adicionar Pessoa</h2>
+                    <div class="form-group">
+                        <label for="person-name">Nome</label>
+                        <input type="text" id="person-name" placeholder="Nome do participante">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="person-age">Idade</label>
+                            <input type="number" id="person-age" placeholder="18">
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="switch-container">
+                                <input type="checkbox" id="person-car">
+                                <span class="checkmark"></span>
+                                Possui carro?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="seats-group">
+                        <label for="car-seats">Lugares disponíveis no carro (além do motorista)</label>
+                        <input type="number" id="car-seats" placeholder="Ex: 3">
+                    </div>
+                    <button class="btn btn-primary">Cadastrar na Lista</button>
+                </section>
+            </div>
+
+            <!-- Coluna da Direita: Lista e Fechamento -->
+            <div class="right-col">
+                <section class="card">
+                    <h2>Lista de Participantes</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                    <th>Carro</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpo-da-tabela-participantes">
+                                
+                            </tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="card summary-card">
+                    <h2>Fechamento</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Valor por Pessoa</span>
+                            <span class="stat-value">R$ 0,00</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Total de Pessoas</span>
+                            <span class="stat-value">2</span>
+                        </div>
+                        <div class="stat-box warning">
+                            <span class="stat-label">Carros Necessários</span>
+                            <span class="stat-value">1</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Carros Disponíveis</span>
+                            <span class="stat-value">1</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-success">Fechar Rolê</button>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="./gerenciar.js"></script>
+</body>
+</html>

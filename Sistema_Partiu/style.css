@@ -1,0 +1,148 @@
+/* Definição de Variáveis e Paleta de Cores */
+:root {
+  --bg-main: #0a0e17;
+  --bg-card: #131b2e;
+  --bg-input: #0b0f19;
+  --border-color: #1e293b;
+  --border-hover: #00f3ff;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --accent-cyan: #00f3ff;
+  --accent-glow: rgba(0, 243, 255, 0.25);
+  
+  --transition-speed: 0.25s;
+}
+
+/* Reset de Margens e Box-Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Wrapper de Alinhamento Central */
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Card do Login */
+.login-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabeçalho */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.brand-highlight {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.login-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Formulário e Inputs */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.linha-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linha-form label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.linha-form input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  width: 100%;
+}
+
+/* Efeito de Foco nos Inputs */
+.linha-form input:focus {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Remove as setas padrão do input numérico para uma interface mais limpa */
+.linha-form input[type="number"]::-webkit-outer-spin-button,
+.linha-form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.linha-form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Botão de Envio */
+.btn-submit {
+  background-color: transparent;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+  color: var(--accent-cyan);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed) ease;
+  margin-top: 0.5rem;
+}
+
+/* Feedback Visual de Hover e Ativo no Botão */
+.btn-submit:hover {
+  background-color: rgba(0, 243, 255, 0.08);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.btn-submit:active {
+  background-color: rgba(0, 243, 255, 0.15);
+  transform: scale(0.98);
+}
